@@ -1,0 +1,21 @@
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build output
+**/bin/
+**/obj/
+
+# Logs
+*.log
+
+# Test results
+TestResults/
+
+# Operating system
+.DS_Store
+Thumbs.db

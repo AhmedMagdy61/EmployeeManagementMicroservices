@@ -1,0 +1,62 @@
+services:
+
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: employee-rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
+  employees:
+    build:
+      context: ./EmployeeService
+      dockerfile: Dockerfile
+    container_name: employee-service
+    ports:
+      - "5240:8080"
+    environment:
+      RABBITMQ_HOST: rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  departments:
+    build:
+      context: ./DepartmentService
+      dockerfile: Dockerfile
+    container_name: department-service
+    ports:
+      - "5009:8080"
+    environment:
+      RABBITMQ_HOST: rabbitmq
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+
+  gateway:
+    build:
+      context: ./ApiGateway
+      dockerfile: Dockerfile
+    container_name: employee-api-gateway
+    ports:
+      - "5151:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Docker
+    depends_on:
+      - employees
+      - departments
+
+volumes:
+  rabbitmq_data:

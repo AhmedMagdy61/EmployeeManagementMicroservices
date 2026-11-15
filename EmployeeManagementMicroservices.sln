@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37614.0 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DepartmentService", "DepartmentService\DepartmentService.csproj", "{D6357F5F-48F4-4D19-8323-EA7BA4420949}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeService", "EmployeeService\EmployeeService.csproj", "{693FD2C1-78F8-4EE2-8F92-DAAB16156A99}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiGateway", "ApiGateway\ApiGateway.csproj", "{7A1A145E-8B49-4187-A725-088DF1B3D57E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{8EC462FD-D22E-90A8-E5CE-7E832BA40C5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Kubernetes\microservices.yaml = Kubernetes\microservices.yaml
+		rabbitmq.conf = rabbitmq.conf
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D6357F5F-48F4-4D19-8323-EA7BA4420949}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6357F5F-48F4-4D19-8323-EA7BA4420949}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6357F5F-48F4-4D19-8323-EA7BA4420949}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6357F5F-48F4-4D19-8323-EA7BA4420949}.Release|Any CPU.Build.0 = Release|Any CPU
+		{693FD2C1-78F8-4EE2-8F92-DAAB16156A99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{693FD2C1-78F8-4EE2-8F92-DAAB16156A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{693FD2C1-78F8-4EE2-8F92-DAAB16156A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{693FD2C1-78F8-4EE2-8F92-DAAB16156A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A1A145E-8B49-4187-A725-088DF1B3D57E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A1A145E-8B49-4187-A725-088DF1B3D57E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A1A145E-8B49-4187-A725-088DF1B3D57E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A1A145E-8B49-4187-A725-088DF1B3D57E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C5C10EFA-E0E2-45BF-9EF6-79447707666C}
+	EndGlobalSection
+EndGlobal
